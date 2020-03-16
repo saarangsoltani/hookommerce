@@ -9,9 +9,9 @@ const DB_NAME = process.env.DB_NAME;
 
 const defaultConnection = {
   name: 'default',
-  type: 'mysql',
+  type: 'postgres',
   host: DB_HOST,
-  port: 3306,
+  port: 5432,
   username: DB_USERNAME,
   password: DB_PASSWORD,
   database: DB_NAME,
@@ -22,7 +22,7 @@ const defaultConnection = {
 
 const connection = createConnection({
   name: defaultConnection.name,
-  type: 'mysql',
+  type: 'postgres',
   host: defaultConnection.host,
   port: defaultConnection.port,
   username: defaultConnection.username,
