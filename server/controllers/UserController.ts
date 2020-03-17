@@ -3,7 +3,7 @@ import { Controller, Get } from '@overnightjs/core';
 import { Logger } from '@overnightjs/logger';
 import { Request, Response } from 'express';
 import connection from '../connection';
-import User from '../database/user/entity';
+import User from '../database/entity/User';
 import { Like } from 'typeorm';
 
 @Controller('api/user/')

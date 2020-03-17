@@ -1,5 +1,5 @@
 import { createConnection } from 'typeorm';
-import User from './database/user/entity';
+import User from './database/entity/User';
 require('dotenv').config();
 
 const DB_HOST = process.env.DB_HOST;
