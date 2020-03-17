@@ -1,6 +1,7 @@
 import { createConnection } from 'typeorm';
 import User from './database/entity/User';
 import Product from './database/entity/Product';
+import Variant from './database/entity/Variant';
 require('dotenv').config();
 
 const DB_HOST = process.env.DB_HOST;
@@ -18,7 +19,7 @@ const defaultConnection = {
   database: DB_NAME,
   synchronize: true,
   logging: true,
-  entities: [User, Product],
+  entities: [User, Product, Variant],
 };
 
 const connection = createConnection({

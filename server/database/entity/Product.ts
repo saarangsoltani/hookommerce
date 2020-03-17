@@ -1,3 +1,4 @@
+import Variant from './Variant';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -5,6 +6,7 @@ import {
   BaseEntity,
   UpdateDateColumn,
   CreateDateColumn,
+  OneToMany
 } from 'typeorm';
 
 export interface IProduct {
@@ -29,6 +31,9 @@ export default class Product extends BaseEntity {
 
   @Column()
   author: string;
+
+  @OneToMany(type => Variant, variant => variant.product)
+  variants: Variant[]
 
   @CreateDateColumn()
   public createdAt: Date;
