@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  BaseEntity,
+  UpdateDateColumn,
+  CreateDateColumn,
+} from 'typeorm';
 
 export interface IUser {
   id: number;
@@ -7,7 +14,10 @@ export interface IUser {
   isActive: boolean;
   email: string;
   password: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
+
 @Entity()
 export default class User extends BaseEntity {
   @PrimaryGeneratedColumn()
@@ -27,4 +37,10 @@ export default class User extends BaseEntity {
 
   @Column()
   password: string;
+
+  @CreateDateColumn()
+  public createdAt: Date;
+
+  @UpdateDateColumn()
+  public updatedAt: Date;
 }
