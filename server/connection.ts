@@ -2,6 +2,7 @@ import { createConnection } from 'typeorm';
 import User from './database/entity/User';
 import Product from './database/entity/Product';
 import Variant from './database/entity/Variant';
+import VariantImage from './database/entity/VariantImage';
 require('dotenv').config();
 
 const DB_HOST = process.env.DB_HOST;
@@ -19,7 +20,7 @@ const defaultConnection = {
   database: DB_NAME,
   synchronize: true,
   logging: true,
-  entities: [User, Product, Variant],
+  entities: [User, Product, Variant, VariantImage],
 };
 
 const connection = createConnection({

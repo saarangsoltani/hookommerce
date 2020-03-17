@@ -1,4 +1,5 @@
 import Variant from './Variant';
+import VariantImage from './VariantImage';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -34,6 +35,9 @@ export default class Product extends BaseEntity {
 
   @OneToMany(type => Variant, variant => variant.product)
   variants: Variant[]
+
+  @OneToMany(type => VariantImage, image => image.product)
+  images: VariantImage[]
 
   @CreateDateColumn()
   public createdAt: Date;
